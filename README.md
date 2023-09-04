@@ -1,6 +1,6 @@
 # CSGO-HUDS-Observer-fyflo
 
-#№ NEW TAB Create match tab
+## NEW TAB Create match tab
 + Map PICK
 
 # IMPORTANT
