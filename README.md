@@ -103,6 +103,7 @@ In Players tab you can define player's real name, displayed name, country flag (
 
 Here you can set type of match - is this a map of NONE, BO1, BO3 or BO5, score for teams and which team it should load to HUD. In case players are on the wrong side (left/right) there is `SWAP` button to quickly tell the HUD to swap teams' name, logo and flag.
 Additionaly, if during the match you decide that there is a type in team's or player's information, you can change it (for example on mobile phone, if you allow Node through firewall and you are on the same local network) and then in this tab click the `Force Refresh HUD`, to make sure all the changes are applied.
+
 ![Ex3](https://i.imgur.com/61l8zd7.png)
 
 ### HUDS
