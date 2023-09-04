@@ -1,5 +1,8 @@
 # CSGO-HUDS-Observer-fyflo
 
+#№ NEW TAB Create match tab
++ Map PICK
+
 # IMPORTANT
 
 ## Before starting change config.json
@@ -78,7 +81,7 @@ Basically, CS:GO is streaming data to local app-server, that transforms data and
 - In scene, click on plus button and add window capture and choose csgo.exe
 - Add browser and in url copy and paste your CS-GO link
 - Add second browser and paste url for radar (it should look like this)
-![Ex5](https://i.imgur.com/TFqY3fR.png)
+![Ex5](https://i.imgur.com/TsxNBgP.png)
 ![Ex6](https://i.imgur.com/aqxAHXH.png)
 
 ## Admin Panel
@@ -99,7 +102,7 @@ In Players tab you can define player's real name, displayed name, country flag (
 
 Here you can set type of match - is this a map of NONE, BO1, BO3 or BO5, score for teams and which team it should load to HUD. In case players are on the wrong side (left/right) there is `SWAP` button to quickly tell the HUD to swap teams' name, logo and flag.
 Additionaly, if during the match you decide that there is a type in team's or player's information, you can change it (for example on mobile phone, if you allow Node through firewall and you are on the same local network) and then in this tab click the `Force Refresh HUD`, to make sure all the changes are applied.
-![Ex3](https://i.imgur.com/KHmwuRa.png)
+![Ex3](https://i.imgur.com/61l8zd7.png)
 
 ### HUDS
 
@@ -124,3 +127,7 @@ In this tab you can easily show/hide scoreboard and radar border while HUD runni
 This project is Licensed under GPL-3. Any changesd to this project need to be made open source (among other things). Distribution is allowed, but must be open (not closed or behind paywall).
 
 The section above is not legal advice and is not legally binding. See the LICENSE file in the repository for the full license.
+
+## My HUD
+
+On the issue of purchasing my HUD, you need to write to my mail. stream@gaprt.ru
