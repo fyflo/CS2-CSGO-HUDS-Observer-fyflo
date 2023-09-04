@@ -1,6 +1,6 @@
 # CSGO-HUDS-Observer-fyflo
 
-## NEW TAB Create match tab
+## NEW Create match tab
 + Map PICK
 + Match info
 + update Boltobserv v. 1.3
