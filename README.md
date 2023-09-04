@@ -6,8 +6,8 @@
 
 # Examples
 
-![Ex1](https://i.imgur.com/AjcRIqK.png](https://i.imgur.com/vazk1hm.jpg )
-![Ex2](https://i.imgur.com/WqrJQzf.png](https://i.imgur.com/f70vHyB.jpg )
+![Ex1](https://i.imgur.com/vazk1hm.jpeg)
+![Ex2](https://i.imgur.com/f70vHyB.jpeg)
 
 ## How does it work?
 
