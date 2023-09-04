@@ -1,1 +1,127 @@
 # CSGO-HUDS-Observer-fyflo
+
+# IMPORTANT
+
+## Before starting change config.json
+
+# Examples
+
+![Ex1](https://i.imgur.com/AjcRIqK.png)
+![Ex2](https://i.imgur.com/WqrJQzf.png)
+![Ex3](https://i.imgur.com/VArEbLC.png)
+
+## How does it work?
+
+Basically, CS:GO is streaming data to local app-server, that transforms data and then load it to local webpage.
+
+## To-do before running
+
+- Node.js needs to be installed
+- public/files/cfg/gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS:GO location
+- cfg/observer.cfg needs to be placed in cfg folder in CS:GO location
+- CS:GO needs to run on Fullscreen Windowed (I know people may dislike it, but since it's only for observation, soo...)
+- After running CS:GO and connecting to match (or replaying a demo, you can use this in it too), type to console `exec observer.cfg`, it makes everything default disappear besides map and killfeed (can use `exec observer_off.cfg` to turn back to normal)
+- Ensure everything in the `config.json` file is filled out
+
+## Configuration
+
+```javascript
+//config.json
+{
+    "GameStateIntegrationPort":1337, //This must be the same as in gamestate_integration_observerspectator.cfg,
+    "ServerPort":2626, //Some free port on your PC
+    "SteamApiKey":"ABCDEFGIJK12345678", //Steam API Key, without it avatars won't work
+    "PrintPlayerData": false, // Useful for seeing steamid of players in the game to add to players database
+    "DisplayAvatars": true, // Display Obs Avatars
+    "DisplayPlayerAvatars": false, // Display custom set player avatars from the players database
+    "DisplayTeamFlags": false, // Display team flags under the team rounds score
+    "DisplayPlayerFlags": true, // Display players flag on the observed player section
+    "DisplayAvatars": false, // true for yes, false for no
+    "AvatarDirectory":"./public/files/avatars/", // Local storage for avatars
+    "SpecialEvent": "SHOWMATCH", // If create match type is set to NONE, it will use this text - used for something else, just leave alone
+    "LeftImage": "/files/league/miceklogo.png", // Left Section Image
+    "LeftImage2": "/files/league/supearmiceklogo.png", // Left Section Image
+    "LeftImage3": "/files/league/turniej_logo.png", // Left Section Image
+    
+    "LeftOneImage": "/files/league/turniej_logo_kopia.png", // Left section, one big image for the entire container
+    "DisplayOnlyMainImage": false, // Check this to display only one big image instead 3 smaller
+    "_onlyComment": " this image ^^^ (LeftOneImage) should be 405px x 85px ",
+    
+    "DisplayScoreboard": true, // Scoreboard appears at the end of the round (once in 4 rounds)
+    "DisplayRadar": true, // Show radar border (if RUN_RADAR didnt work)
+    
+    "LeftPrimary": "Left Primary Text", // left Section Top Words
+    "LeftSecondary": "Left Secondary Text", // Left Section Bottom Words
+    "RightImage": "/files/img/elements/icon_microphone.png", // Right Section Image
+    "RightPrimary": "Right Primary Text", // Right Section Top Words
+    "RightSecondary": "Right Secondary Text", // Right Section Bottom Words
+}
+```
+
+## How to make it run?
+
+- Install NodeJS (nodejs.org)
+- Download this repo somewhere
+- Start RUN_HUD.bat file and RUN_RADAR.bat
+- Run Overlay Exe from here: [OVERLAY DOWNLOAD](https://drive.google.com/file/d/1uByNiYqkzGJ-8JftDrm29XTUM0En375_/view?usp=sharing) or just go to your browser [http://localhost:2626](http://localhost:2626)
+- Ensure that in the Overlay exe folder, there is a config.json file with the following:
+- Radar will be on :36364 port [http://localhost:36364](http://localhost:36364)
+
+```javascript
+//config.json
+    {
+        "port": 2626 // same port as ServerPort as stated in the 'big' config.json file above
+    }
+```
+
+## How to make it work with OBS?
+- In your OBS create a new scene
+- In scene, click on plus button and add window capture and choose csgo.exe
+- Add browser and in url copy and paste your CS-GO link
+- Add second browser and paste url for radar (it should look like this)
+![Ex5](https://i.imgur.com/TFqY3fR.png)
+![Ex6](https://i.imgur.com/aqxAHXH.png)
+
+## Admin Panel
+
+After starting the code go to address showing up in terminal/command prompt. You should see Admin Panel divided in three parts - Teams, Players, Create Match and HUDs. In here you can manage data used in HUDs during match ups.
+
+#### Teams tab
+
+You can here define teams, their name, short names (actually short names are not use anywhere for now), their country flag and logo. Files for teams' logos are being held in `public/storage/` and their filename should start from `logo-`.
+![Ex1](https://i.imgur.com/7HPOrB0.png)
+
+#### Players tab
+
+In Players tab you can define player's real name, displayed name, country flag (can also be set to "The same as team"), their team and, to identify players, SteamID64. Files for players' avatars are being held in `public/storage/` and their filename should start from `avatar-`.
+![Ex2](https://i.imgur.com/tiDnUPj.png)
+
+#### Create match tab
+
+Here you can set type of match - is this a map of NONE, BO1, BO3 or BO5, score for teams and which team it should load to HUD. In case players are on the wrong side (left/right) there is `SWAP` button to quickly tell the HUD to swap teams' name, logo and flag.
+Additionaly, if during the match you decide that there is a type in team's or player's information, you can change it (for example on mobile phone, if you allow Node through firewall and you are on the same local network) and then in this tab click the `Force Refresh HUD`, to make sure all the changes are applied.
+![Ex3](https://i.imgur.com/KHmwuRa.png)
+
+### HUDS
+
+This tab shows local HUDs. They are not validated whether or not they actually work, but if any of the files is missing, it will notify you in Warnings column.
+You can enable/disable each HUD to make it accessible or not. There is also HUD URL information - if you click it, it will redirect you to local webpage, that's serving as a HUD. It is useful if streamer wants to stream HUD separately - for example it can be added in OBS as Browser Source, then you just need to set it to HUD's URL.
+It might be useful for bigger streaming workspaces, like for setups with different PC dedicated to replays - one server app will manage every HUD on local network, because all HUDs are available all the time, if they are not disabled.
+![Ex4](https://i.imgur.com/HbdH4Ia.png)
+
+### LIVE PAGE
+
+In this tab you can easily show/hide scoreboard and radar border while HUD running
+
+![Ex5](https://i.imgur.com/cyg5Ws4.png)
+
+## Credits
+
+- [osztenkurden](https://github.com/osztenkurden) - Original Repo Creator [link](https://github.com/osztenkurden/Custom-CSGO-HUD)
+- [boldgolt](https://github.com/boltgolt) - Radar on hud [link](https://github.com/boltgolt/boltobserv)
+
+## License
+
+This project is Licensed under GPL-3. Any changesd to this project need to be made open source (among other things). Distribution is allowed, but must be open (not closed or behind paywall).
+
+The section above is not legal advice and is not legally binding. See the LICENSE file in the repository for the full license.
