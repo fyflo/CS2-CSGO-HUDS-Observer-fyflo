@@ -3,6 +3,7 @@
 ## NEW TAB Create match tab
 + Map PICK
 + Match info
++ update Boltobserv v. 1.3
 
 # IMPORTANT
 
