@@ -6,9 +6,10 @@
 
 # Examples
 
-![Ex1](https://i.imgur.com/AjcRIqK.png)
-![Ex2](https://i.imgur.com/WqrJQzf.png)
-![Ex3](https://i.imgur.com/VArEbLC.png)
+![Ex1]([https://i.imgur.com/AjcRIqK.png](https://i.imgur.com/vazk1hm.jpg
+))
+![Ex2]([https://i.imgur.com/WqrJQzf.png](https://i.imgur.com/f70vHyB.jpg
+))
 
 ## How does it work?
 
@@ -63,7 +64,7 @@ Basically, CS:GO is streaming data to local app-server, that transforms data and
 - Install NodeJS (nodejs.org)
 - Download this repo somewhere
 - Start RUN_HUD.bat file and RUN_RADAR.bat
-- Run Overlay Exe from here: [OVERLAY DOWNLOAD](https://drive.google.com/file/d/1uByNiYqkzGJ-8JftDrm29XTUM0En375_/view?usp=sharing) or just go to your browser [http://localhost:2626](http://localhost:2626)
+- Run Overlay Exe from here: [OVERLAY DOWNLOAD]([https://drive.google.com/file/d/1uByNiYqkzGJ-8JftDrm29XTUM0En375_/view?usp=sharing](https://drive.google.com/file/d/1gHMgI85guGmWOkSV4aqhUl0hUOSioxV1/view?usp=sharing)) or just go to your browser [http://localhost:2626](http://localhost:2626)
 - Ensure that in the Overlay exe folder, there is a config.json file with the following:
 - Radar will be on :36364 port [http://localhost:36364](http://localhost:36364)
 
