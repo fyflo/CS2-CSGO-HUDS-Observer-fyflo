@@ -1,0 +1,28 @@
+{
+  "name": "CSGO-fyflo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CSGO_HUD_fyflo",
+  "author": "fyflo",
+  "maintainers": [
+    "fyflo <stream@gaprt.ru>"
+  ],
+  "dependencies": {
+    "body-parser": "latest",
+    "browserify": "^17.0.0",
+    "csgogsi": "^2.5.1",
+    "express": "^4.17.2",
+    "fs": "latest",
+    "http": "latest",
+    "ip": "latest",
+    "json5": "^2.2.0",
+    "multer": "latest",
+    "nedb": "latest",
+    "node-csgo-gsi": "0.0.4-alpha.3",
+    "path": "^0.12.7",
+    "pug": "latest",
+    "request": "latest",
+    "socket.io": "^4.4.1",
+    "ws": "^7.2.3"
+  }
+}
