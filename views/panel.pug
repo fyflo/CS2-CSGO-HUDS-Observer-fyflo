@@ -1,0 +1,309 @@
+.row
+	.col.s12(style="text-align:center;")
+		.input-field.col.s12
+			select#botype
+				option(value='', disabled='', selected='') Choose your option
+				option(value=null) None
+				option(value='bo1') Best Of 1
+				option(value='bo3') Best Of 3
+				option(value='bo5') Best Of 5
+			label Choose type (in BO1 bar doesnt show)
+		.col.s12.m6
+			.row
+				h3 Team 1
+				.input-field.col.s12
+					select#team_1_score
+						option(value='0', selected) 0
+						option(value='1') 1
+						option(value='2') 2
+						option(value='3') 3
+					label Map wins for team 1
+				//.input-field.col.s12
+					select#team_1_map
+						option(value='', selected) NONE
+						option(value='DECIDER ') DECIDER
+						option(value='Now playing ANUBIS | ') ANUBIS
+						option(value='Now playing INFERNO | ') INFERNO
+						option(value='Now playing MIRAGE | ') MIRAGE
+						option(value='Now playing OVERPASS | ') OVERPASS
+						option(value='Now playing NUKE | ') NUKE
+						option(value='Now playing ANCIENT | ') ANCIENT
+						option(value='Now playing VERTIGO | ') VERTIGO
+					label Map pick team team 1 
+			.row
+				.input-field.col.s12
+					select#team_1.icons
+						option(value=null) NONE
+						option(value='auto', selected) Try to match team automatically
+					label Set team 1
+		.col.s12.m6
+			.row
+				h3 Team 2
+				.input-field.col.s12
+					select#team_2_score
+						option(value='0', selected) 0
+						option(value='1') 1
+						option(value='2') 2
+						option(value='3') 3
+					label Map wins for team 2
+				//.input-field.col.s12
+					select#team_2_map
+						option(value='', selected) NONE
+						option(value='DECIDER') DECIDER
+						option(value='Now playing ANUBIS | ') ANUBIS
+						option(value='Now playing INFERNO | ') INFERNO
+						option(value='Now playing MIRAGE | ') MIRAGE
+						option(value='Now playing OVERPASS | ') OVERPASS
+						option(value='Now playing NUKE | ') NUKE
+						option(value='Now playing ANCIENT | ') ANCIENT
+						option(value='Now playing VERTIGO | ') VERTIGO
+					label Map pick team 2
+			.row
+				.input-field.col.s12
+					select#team_2.icons
+						option(value=null) NONE
+						option(value='auto', selected) Try to match team automatically
+					label Set team 2
+		.col.s12
+			.row
+				h3 LIVE MAP PICK
+				.input-field.col.s12
+					select#online_map
+						option(value='', selected) NONE
+						option(value='Playing DECIDER') DECIDER
+						option(value='Playing ANUBIS | Pick ') ANUBIS
+						option(value='Playing INFERNO | Pick ') INFERNO
+						option(value='Playing MIRAGE | Pick ') MIRAGE
+						option(value='Playing OVERPASS | Pick ') OVERPASS
+						option(value='Playing NUKE | Pick ') NUKE
+						option(value='Playing ANCIENT | Pick ') ANCIENT
+						option(value='Playing VERTIGO | Pick ') VERTIGO
+						option(value='Playing ANUBIS | DECIDER ') ANUBIS | DECIDER 
+						option(value='Playing INFERNO | DECIDER ') INFERNO | DECIDER 
+						option(value='Playing MIRAGE | DECIDER ') MIRAGE | DECIDER 
+						option(value='Playing OVERPASS | DECIDER ') OVERPASS | DECIDER 
+						option(value='Playing NUKE | DECIDER ') NUKE | DECIDER 
+						option(value='Playing ANCIENT | DECIDER ') ANCIENT | DECIDER 
+						option(value='Playing VERTIGO | DECIDER') VERTIGO | DECIDER 
+					label Map pick team
+			.row
+		.col.s12
+			.row
+				.input-field.col.s12
+					input#team_pick_map.validate(placeholder='Team Name', type='text', name="team_pick_map")
+					label(for='team_pick_map') Picked by Team Name
+			.row
+		.col.s12.m6
+			.row
+				h3 ONE LIVE MAP PICK
+				.input-field.col.s12
+					select.map_pick_1
+						option(value='', selected) NONE
+						option(value='DECIDER') DECIDER
+						option(value='ANUBIS') ANUBIS
+						option(value='INFERNO') INFERNO
+						option(value='MIRAGE') MIRAGE
+						option(value='OVERPASS') OVERPASS
+						option(value='NUKE') NUKE
+						option(value='ANCIENT') ANCIENT
+						option(value='VERTIGO') VERTIGO
+					label Map pick team
+			.row
+				.input-field.col.s12
+					select.playing_1
+						option(value='', selected) NONE
+						option(value='Playing NOW') Playing NOW
+					label Playing NOW
+			//.row
+				.input-field.col.s12.m6
+					input.team_1_pick.validate(placeholder='Team 1 Pick MAP', type='text', name="team_1_pick")
+					label(for='team_1_pick') Team 1 Pick MAP
+			.row
+				.input-field.col.s12
+					input.score_map_1.validate(placeholder='Score Map 1', type='text', name="score_map_1")
+					label(for='score_map_1') Score Map 1
+			//.row
+				.input-field.col.s12.m6
+					input.playing_1.validate(placeholder='Playing NOW', type='text', name='playing_1', value='Playing NOW')
+					label(for='playing_1') Playing NOW
+			//.row
+				.input-field.col.s12.m6
+					input.win_map_1.validate(placeholder='Win Map 1', type='text', name="win_map_1")
+					label(for='win_map_1') Win Map 1
+			.row
+				.input-field.col.s12
+					select#team_3.icons
+						option(value=null) NONE
+						option(value='auto', selected) Try to match team automatically
+					label Pick Team 1 Map
+			.row
+				.input-field.col.s12
+					select#team_4.icons
+						option(value=null) NONE
+						option(value='auto', selected) Try to match team automatically
+					label WIN Pick Team 1 Map
+			.row
+				.input-field.col.s12
+					select#pick_map_team1
+						option(value='',) No_img_map
+						option(value='inferno') inferno
+						option(value='ancient') ancient
+						option(value='anubis') anubis
+						option(value='mirage') mirage
+						option(value='nuke') nuke
+						option(value='overpass') overpass
+						option(value='vertigo') vertigo
+						option(value='tba') tba
+						option(value='inferno_black') inferno_No_live_map
+						option(value='ancient_black') ancient_No_live_map
+						option(value='anubis_black') anubis_No_live_map
+						option(value='mirage_black') mirage_No_live_map
+						option(value='nuke_black') nuke_No_live_map
+						option(value='overpass_black') overpass_No_live_map
+						option(value='vertigo_black') vertigo_No_live_map
+						option(value='tba_black') tba_No_live_map
+					label Fon 1
+		.col.s12.m6
+			.row
+				h3 TWO LIVE MAP PICK
+				.input-field.col.s12
+					select.map_pick_2
+						option(value='', selected) NONE
+						option(value='DECIDER') DECIDER
+						option(value='ANUBIS') ANUBIS
+						option(value='INFERNO') INFERNO
+						option(value='MIRAGE') MIRAGE
+						option(value='OVERPASS') OVERPASS
+						option(value='NUKE') NUKE
+						option(value='ANCIENT') ANCIENT
+						option(value='VERTIGO') VERTIGO
+					label Map pick team
+			.row
+				.input-field.col.s12
+					select.playing_2
+						option(value='', selected) NONE
+						option(value='Playing NOW') Playing NOW
+					label Playing NOW
+			//.row
+				.input-field.col.s12.m6
+					input.team_2_pick.validate(placeholder='Team 2 Pick MAP', type='text', name="team_2_pick")
+					label(for='team_2_pick') Team 2 Pick MAP
+			.row
+				.input-field.col.s12
+					input.score_map_2.validate(placeholder='Score Map 2', type='text', name="score_map_2", value="- : -")
+					label(for='score_map_2') Score Map 2
+			//.row
+				.input-field.col.s12.m6
+					input.playing_2.validate(placeholder='Playing NOW', type='text', name='playing_2', value='Playing NOW')
+					label(for='playing_2') Playing NOW
+			//.row
+				.input-field.col.s12.m6
+					input.win_map_2.validate(placeholder='Win Map 2', type='text', name="win_map_2")
+					label(for='win_map_2') Win Map 2
+			.row
+				.input-field.col.s12
+					select#team_5.icons
+						option(value=null) NONE
+						option(value='auto', selected) Try to match team automatically
+					label Pick Team 2 Map
+			.row
+				.input-field.col.s12
+					select#team_6.icons
+						option(value=null) NONE
+						option(value='auto', selected) Try to match team automatically1
+					label WIN Pick Team 2 Map
+			.row
+				.input-field.col.s12
+					select#pick_map_team2
+						option(value='',) No_img_map
+						option(value='inferno') inferno
+						option(value='ancient') ancient
+						option(value='anubis') anubis
+						option(value='mirage') mirage
+						option(value='nuke') nuke
+						option(value='overpass') overpass
+						option(value='vertigo') vertigo
+						option(value='tba') tba
+						option(value='inferno_black') inferno_No_live_map
+						option(value='ancient_black') ancient_No_live_map
+						option(value='anubis_black') anubis_No_live_map
+						option(value='mirage_black') mirage_No_live_map
+						option(value='nuke_black') nuke_No_live_map
+						option(value='overpass_black') overpass_No_live_map
+						option(value='vertigo_black') vertigo_No_live_map
+						option(value='tba_black') tba_No_live_map
+					label Fon 2
+		.col.s12
+			.row
+				h3 DECIDER LIVE MAP PICK
+				.input-field.col.s12
+					select.decider_map
+						option(value='', selected) NONE
+						option(value='DECIDER') DECIDER
+						option(value='ANUBIS') ANUBIS
+						option(value='INFERNO') INFERNO
+						option(value='MIRAGE') MIRAGE
+						option(value='OVERPASS') OVERPASS
+						option(value='NUKE') NUKE
+						option(value='ANCIENT') ANCIENT
+						option(value='VERTIGO') VERTIGO
+					label decider map
+			.row
+				.input-field.col.s12
+					input.score_map_3.validate(placeholder='Score Map 3', type='text', name="score_map_3", value="- : -")
+					label(for='score_map_3') Score Map 3
+			.row
+				.input-field.col.s12
+					select.playing_3
+						option(value='', selected) NONE
+						option(value='DECIDER') DECIDER
+						option(value='Playing NOW') Playing NOW
+					label Playing NOW
+			//.row
+				.input-field.col.s12.m6
+					input.playing_3.validate(placeholder='Playing NOW', type='text', name='playing_3', value='Playing NOW')
+					label(for='playing_3') Playing NOW & DECIDER
+			//.row
+				.input-field.col.s12.m6
+					input.win_map_3.validate(placeholder='Win Map 3', type='text', name="win_map_3")
+					label(for='win_map_3') Win Map 3
+			.row
+				.input-field.col.s12
+					select#decider
+						option(value='',) No_img_map
+						option(value='inferno') inferno
+						option(value='ancient') ancient
+						option(value='anubis') anubis
+						option(value='mirage') mirage
+						option(value='nuke') nuke
+						option(value='overpass') overpass
+						option(value='vertigo') vertigo
+						option(value='tba') tba
+						option(value='inferno_black') inferno_No_live_map
+						option(value='ancient_black') ancient_No_live_map
+						option(value='anubis_black') anubis_No_live_map
+						option(value='mirage_black') mirage_No_live_map
+						option(value='nuke_black') nuke_No_live_map
+						option(value='overpass_black') overpass_No_live_map
+						option(value='vertigo_black') vertigo_No_live_map
+						option(value='tba_black') tba_No_live_map
+					label Fon 3
+		.col.s12
+			.row
+				h3 INFO THE EVENTS HEAD
+				.input-field.col.s12
+					input#left_events.validate(placeholder='Left Events', type='text', name="Left Events")
+					label(for='left_events') Left Events
+			.row
+				.input-field.col.s12
+					input#right_events.validate(placeholder='Right Events', type='text', name="Right Events")
+					label(for='right_events') Right Events
+		.input-field.col.s12
+			.row
+				a.waves-effect.waves-light.btn#set Set
+				a.waves-effect.waves-light.btn#swap Swap
+			.row
+				a.waves-effect.waves-light.btn#ref Force refresh HUD
+
+
+a(href='https://www.twitch.tv/fyflo') Subscribe to my channel on Twitch: fyflo
