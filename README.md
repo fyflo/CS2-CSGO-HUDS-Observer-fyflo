@@ -2,6 +2,7 @@
 
 ## NEW TAB Create match tab
 + Map PICK
++ Match info
 
 # IMPORTANT
 
