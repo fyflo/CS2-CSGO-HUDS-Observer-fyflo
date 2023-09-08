@@ -124,6 +124,7 @@ In this tab you can easily show/hide scoreboard and radar border while HUD runni
 
 - [osztenkurden](https://github.com/osztenkurden) - Original Repo Creator [link](https://github.com/osztenkurden/Custom-CSGO-HUD)
 - [boldgolt](https://github.com/boltgolt) - Radar on hud [link](https://github.com/boltgolt/boltobserv)
+- [Bre3n](https://github.com/Bre3n) - Radar on hud [link](https://github.com/Bre3n/CSGO)
 
 ## License
 
