@@ -52,6 +52,7 @@ function loadMatch(data) {
 			$('#pick_map_team1').val('').val(data.map.pick_map_team1)
 			$('#pick_map_team2').val('').val(data.map.pick_map_team2)
 			$('#decider').val('').val(data.map.decider)
+			$('#logo_champ').val('').val(data.map.logo_champ)
 		}
 		$('select').formSelect()
 	})
@@ -90,6 +91,7 @@ $(document).ready(() => {
 				pick_map_team1: $('#pick_map_team1').val(),
 				pick_map_team2: $('#pick_map_team2').val(),
 				decider: $('#decider').val(),
+				logo_champ: $('#logo_champ').val(),
 			},
 			team_3: {
 				team: $('#team_3').val(),
@@ -149,6 +151,9 @@ $(document).ready(() => {
 				left_events: $('#left_events').val(),
 				right_events: $('#right_events').val(),
 				pick_map_team1: $('#pick_map_team1').val(),
+				pick_map_team2: $('#pick_map_team2').val(),
+				decider: $('#decider').val(),
+				logo_champ: $('#logo_champ').val(),
 			},
 		}
 		io.emit('update_match', match)
