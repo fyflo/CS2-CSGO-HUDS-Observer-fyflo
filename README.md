@@ -1,4 +1,4 @@
-# CSGO-HUDS-Observer-fyflo
+# CS2-CSGO-HUDS-Observer-fyflo
 
 ## NEW Create match tab
 + Map PICK
