@@ -21,8 +21,12 @@ Basically, CS:GO is streaming data to local app-server, that transforms data and
 ## To-do before running
 
 - Node.js needs to be installed
-- public/files/cfg/gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS:GO location
-- cfg/observer.cfg needs to be placed in cfg folder in CS:GO location
+**** CSGO
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS:GO location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\observer.cfg needs to be placed in cfg folder in CS:GO location
+**** CS2
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS:GO location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\observer.cfg needs to be placed in cfg folder in CS:GO location
 - CS:GO needs to run on Fullscreen Windowed (I know people may dislike it, but since it's only for observation, soo...)
 - After running CS:GO and connecting to match (or replaying a demo, you can use this in it too), type to console `exec observer.cfg`, it makes everything default disappear besides map and killfeed (can use `exec observer_off.cfg` to turn back to normal)
 - Ensure everything in the `config.json` file is filled out
