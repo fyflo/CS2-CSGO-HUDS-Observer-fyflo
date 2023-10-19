@@ -2,9 +2,9 @@ html
   head
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     script(src="/socket.io/socket.io.js")
-    script(src="http://code.jquery.com/jquery-2.1.4.min.js")
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js")
     script.
-      var ip = "#{ip}",
+      var ip = "#{ip}", //"#{ip}""#{localhost}"
       port = "#{port}",
       _print_player_data = #{print_player_data},
       disp_avatars = #{display_avatars},
@@ -145,13 +145,13 @@ html
               #stats_container
                 #stats_img
                   #kills_img
-                    img(src='/files/img/kill.png', style='max-height:25px; width:auto')
+                    img(src='/files/img/elements/kill.png', style='max-height:25px; width:auto')
                     #kills_hud_count 13
                   #assist_img.img
-                    img(src='/files/img/assist.png', style='max-height:25px; width:auto')
+                    img(src='/files/img/elements/assist.png', style='max-height:25px; width:auto')
                     #assist_hud_count 13
                   #death_img.img
-                    img(src='/files/img/death.png', style='max-height:25px; width:auto')
+                    img(src='/files/img/elements/death.png', style='max-height:25px; width:auto')
                     #death_hud_count 13
               #nades
                 img(src='/files/img/grenades/weapon_flashbang.png', style='max-height: 20px; width:auto; filter: invert(100%); float:right; margin-right:10px;')

@@ -178,7 +178,7 @@ function fillPlayer(player, nr, side, max){
     $bottom.find(".assists").text(statistics.assists);
     $bottom.find(".deaths").text(statistics.deaths);
 
-    $bottom.find(".hp_el").html(statistics.helmet ? $("<img />").attr("src", "/files/img/helmet.png") : statistics.armor > 0 ? $("<img />").attr("src", "/files/img/armor.png") : "");
+    $bottom.find(".hp_el").html(statistics.helmet ? $("<img />").attr("src", "/files/img/elements/helmet.png") : statistics.armor > 0 ? $("<img />").attr("src", "/files/img/elements/armor.png") : "");
     $bottom.find(".bomb_defuse").html(statistics.defusekit ? $("<img />").attr("src", "/files/img/elements/defuse.png").addClass("invert_brightness") : "");0
 
     $bottom.find(".moneys").text("$"+statistics.money);
@@ -196,7 +196,7 @@ function fillPlayer(player, nr, side, max){
             "margin-top":"-3.5px",
             "float": side
         };
-        $bottom.find("#weapon_icon").prepend($("<img />").attr("src", "/files/img/kill.png").addClass("kill").css("float", side)).prepend($("<div></div>").text(statistics.round_kills).css(img_css));
+        $bottom.find("#weapon_icon").prepend($("<img />").attr("src", "/files/img/elements/kill.png").addClass("kill").css("float", side)).prepend($("<div></div>").text(statistics.round_kills).css(img_css));
     }
 
     for(let key in weapons){
