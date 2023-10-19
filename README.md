@@ -1,6 +1,9 @@
 # CS2-CSGO-HUDS-Observer-fyflo
 
 ## NEW Create match tab
+Update HUDS
+
+## NEW Create match tab
 + Map PICK
 + Match info
 + update Boltobserv v. 1.3
@@ -13,6 +16,7 @@
 
 ![Ex1](https://i.imgur.com/vazk1hm.jpeg)
 ![Ex2](https://i.imgur.com/f70vHyB.jpeg)
+![Ex2](https://www.youtube.com/watch?v=liKSKBNt224)
 
 ## How does it work?
 
