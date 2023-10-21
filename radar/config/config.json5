@@ -4,15 +4,14 @@
 // without making changes here. This makes your config a lot more portable.
 
 {
-	"_version": "1.3.0",
+	"_version": "1.4.0",
 
-	// Settings related to the Boltobserv window 
+	// Settings related to the Boltobserv window
 	// Настройки, связанные с окном Boltobserv
 	"window": {
-		// Don't show radar in a window, only a small status window will open 
+		// Don't show radar in a window, only a small status window will open
 		// Не показывать радар в окне, откроется только небольшое окно состояния
 		"disable": false,
-
 
 		// Always show the window as the top application
 		// Всегда показывать окно как главное приложение
@@ -20,9 +19,9 @@
 
 		// Make the background of the window transparent
 		// Сделать фон окна прозрачным
-		"transparent": false,
+		"transparent": true,
 
-		// Change the background color of the window even with transparency
+		// Change the background color of the window with optional transparency
 		// The color should be in hexadecimal color code
 		// like #FFF or #FFFFFF to normal color and #80FFFFFF to color with transparency
 		// Изменяем цвет фона окна даже с прозрачностью
@@ -43,7 +42,7 @@
 		// Do not capture mouse events, allowing interaction with the window underneath
 		// Dragging or resizing the window will be disabled if this option is true
 		// Не захватывать события мыши, разрешая взаимодействие с окном под ним
-		// Перетаскивание или изменение размера окна будет отключено, если для этой опции установлено значение true
+		// Перетаскивание или изменение размера окна будет отключено, если для этой опции
 		"mousePassthrough": false,
 
 		// The default shape and position of the window
@@ -68,7 +67,7 @@
 	"browser": {
 		// Prevents a background from being set in the browser, for OBS capture
 		// Предотвращает установку фона в браузере для захвата OBS
-		"transparent": true,
+		"transparent": false,
 
 		"ports": {
 			// Serves static files, such as HTML. Use this one in your browser
