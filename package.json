@@ -1,30 +1,26 @@
 {
-  "name": "CS2-CSGO-fyflo",
-  "version": "1.0.0",
-  "private": true,
-  "description": "CS2-CSGO-fyflo",
-  "author": "fyflo",
-  "maintainers": [
-    "fyflo <stream@gaprt.ru>"
-  ],
+  "name": "boltobserv",
+  "version": "1.4.0",
+  "description": "External radar for CSGO observers",
+  "main": "index.js",
+  "homepage": "https://github.com/boltgolt/boltobserv/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boltgolt/boltobserv.git"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Boltgolt <hey@boltgolt.nl> (https://boltgolt.nl)",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "electron": "^22.3.25",
+    "electron-packager": "^15.5.2"
+  },
   "dependencies": {
-    "@types/socket.io-client": "^1.4.32",
-    "body-parser": "latest",
-    "browserify": "^17.0.0",
-    "csgogsi": "^2.5.1",
-    "express": "^4.17.2",
-    "fs": "latest",
-    "http": "latest",
-    "ip": "latest",
-    "json5": "^2.2.0",
-    "multer": "latest",
-    "nedb": "latest",
-    "node-csgo-gsi": "0.0.4-alpha.3",
-    "path": "^0.12.7",
-    "pug": "latest",
-    "punycode": "^2.3.0",
-    "request": "latest",
-    "socket.io": "^4.4.1",
-    "ws": "^7.2.3"
+    "express": "^4.18.2",
+    "json5": "^2.2.3",
+    "steam-game-path": "^2.2.0",
+    "ws": "^7.5.9"
   }
 }
