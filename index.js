@@ -1,260 +1,88 @@
-const http = require('http'),
-	apps = require('express'),
-	app = apps(),
-	request = require('request'),
-	express = require('http').Server(app),
-	io = require('socket.io')(express),
-	fs = require('fs'),
-	//address = "localhost",
-	address = require('ip').address(),
-	players = require('./mod/players.js'),
-	teams = require('./mod/teams.js'),
-	huds = require('./mod/huds.js')
+// ================================================================================
+//
+//                              PLEASE READ:
+// This project is under a GPL-3 license, you are REQUIRED to publicly publish any
+// changes or upgrades you make to the codebase, it strengthens the community.
+// Contact the maintainer if you have any questions regarding the license.
+//
+// ================================================================================
 
-var recent_update
-var match = null
-var multer = require('multer')
+const path = require("path")
+const child_process = require("child_process")
 
-var storage = multer.diskStorage({
-	destination: function (req, file, cb) {
-		cb(null, 'public/storage')
-	},
-	filename: function (req, file, cb) {
-		cb(null, file.fieldname + '-' + Date.now() + '.png')
-	},
-})
+const config = require("./loadconfig")
+//const window = require("./window")
 
-var upload = multer({
-	storage: storage,
-})
+let hasMap = false
+let connTimeout = false
+var win = false
 
-const config = huds.loadConfig()
+let gsi = child_process.fork(`${__dirname}/gsi.js`)
+let http = child_process.fork(`${__dirname}/http.js`)
+let socket = child_process.fork(`${__dirname}/socket.js`)
 
-const bodyParser = require('body-parser')
+function setActivePage(page, win) {
+	//if (window.win !== false && !config.window.disable) {
+		//window.win.loadFile(`html/${page}.html`)
+	//}
 
-function getFlags() {
-	let flags = []
-	fs.readdirSync('./public/files/img/flags/').forEach(file => {
-		if (file.substr(-4, 4) == '.png') {
-			flags.push(file.substr(0, file.indexOf('.png')))
-		}
+	http.send(page)
+
+	socket.send({
+		type: "pageUpdate"
 	})
-	return flags
-}
 
-function status(bool) {
-	return JSON.stringify({
-		status: bool,
-	})
-}
-
-var download = function (uri, filename, callback) {
-	request.head(uri, (err, res, body) => {
-		request(uri).pipe(fs.createWriteStream(filename)).on('close', callback)
-	})
-}
-
-app.locals.pretty = true
-app.use(
-	bodyParser.urlencoded({
-		extended: true,
-	})
-)
-
-app.use(bodyParser.json())
-app.use(apps.static(__dirname + '/public'))
-
-app.engine('pug', require('pug').__express)
-app.set('view engine', 'pug')
-
-app.get('/', (req, res) => {
-	return res.render('index', {
-		ip: config.Address,
-		port: config.ServerPort,
-		flags: getFlags(),
-	})
-})
-
-app.get('/huds', huds.overlay)
-
-app.get('/huds/:id([^\\/]+)', huds.render)
-
-app.get('/api/huds', huds.getHUDs)
-
-app.post('/api/huds', huds.addHUD)
-
-app.patch('/api/huds', huds.setHUD)
-
-app.delete('/api/huds', huds.deleteHUD)
-
-app.get('/teams', teams.render)
-
-app.get('/api/teams', teams.getTeams)
-
-app.post('/api/teams', upload.single('logo'), teams.addTeam)
-
-app.patch('/api/teams', upload.single('logo'), teams.updateTeam)
-
-app.delete('/api/teams', teams.deleteTeam)
-
-app.delete('/api/teams_logo', teams.deleteLogo)
-
-app.get('/players', players.render)
-
-app.get('/api/players', players.getPlayers)
-
-app.post('/api/players', upload.single('avatar'), players.addPlayer)
-
-app.patch('/api/players', upload.single('avatar'), players.updatePlayer)
-
-app.delete('/api/players', players.deletePlayer)
-
-app.delete('/api/players_avatar', players.deleteAvatar)
-
-app.get('/av/:sid([0-9]+)', (req, res) => {
-	let steam_id = req.params.sid
-
-	let filename = steam_id + '.png'
-	let filepath = config.AvatarDirectory + filename
-	let bodyChunks = []
-	let data
-
-	if (fs.existsSync(filepath)) {
-		let file = fs.readFileSync(filepath)
-		res.writeHead(200, {
-			'Content-Type': 'image/png',
-			'Content-Length': file.length,
+	// Make sure no race condition occured
+	setTimeout(() => {
+		socket.send({
+			type: "pageUpdate"
 		})
-		return res.end(file)
-	} else {
-		let getPlayerCallback = ans => {
-			ans
-				.on('data', chunk => {
-					bodyChunks.push(chunk)
-				})
-				.on('end', endCallback)
-		}
-		let endCallback = () => {
-			let body = Buffer.concat(bodyChunks)
-			try {
-				data = JSON.parse(body).response
-				if (data && data.players) {
-					download(
-						data.players[0].avatarfull,
-						config.AvatarDirectory + filename,
-						() => {
-							let file = fs.readFileSync(filepath)
-							res.writeHead(200, {
-								'Content-Type': 'image/png',
-								'Content-Length': file.length,
-							})
-							return res.end(file)
-						}
-					)
-				}
-			} catch (e) {
-				return res.sendStatus(500)
-			}
-		}
+	}, 200)
+}
 
-		let request = http.get(
-			'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' +
-				config.SteamApiKey +
-				'&steamids=' +
-				steam_id,
-			getPlayerCallback
-		)
-		request.on('error', e => {
-			return res.sendStatus(500)
-		})
+gsi.on("message", (message) => {
+	socket.send(message)
+
+	if (message.type == "connection") {
+		if (message.data.status == "up" && connTimeout === false && config.game.connectionTimout >= 0) {
+			console.info("CSGO has pinged server, connection established")
+		}
+	}
+	else if (!hasMap) {
+		if (message.type == "map") {
+			setActivePage("map", win)
+			hasMap = true
+
+			console.info(`Map ${message.data} selected`)
+		}
+	}
+
+	if (config.game.connectionTimout >= 0) {
+		clearTimeout(connTimeout)
+		connTimeout = setTimeout(() => {
+			hasMap = false
+			setActivePage("waiting", win)
+		}, config.game.connectionTimout * 1000)
 	}
 })
-io.on('connection', socket => {
-	socket.on('update', data => {
-		io.emit(data)
-	})
-	socket.on('ready', () => {
-		if (match) {
-			socket.emit('match', match)
-		}
-		if (recent_update) {
-			socket.emit('update', recent_update)
-		}
-	})
-	socket.on('update_match', data => {
-		match = data
-		io.emit('match', data)
-	})
-	socket.on('refresh', data => {
-		io.emit('refresh', data)
-	})
-	socket.on('toggleScoreboard', data => {
-		io.emit('toggleScoreboard', data)
-	})
-	socket.on('toggleRadar', data => {
-		io.emit('toggleRadar', data)
-	})
-})
-
-express.listen(config.ServerPort, address || 'localhost', () => {
-	console.log(
-		'\n\tOpen http://' +
-			address +
-			':' +
-			config.ServerPort +
-			' in a browser to connect to HUD'
-	)
-	console.log('\n')
-})
-
-server = http.createServer((req, res) => {
-	res.writeHead(200, {
-		'Content-Type': 'text/html',
-	})
-	if (req.method != 'POST') {
-		return res.end('')
-	}
-	let body,
-		data,
-		bodyChunks = []
-	req.on('data', data => {
-		bodyChunks.push(data)
-	})
-	req.on('end', () => {
-		body = Buffer.concat(bodyChunks)
-		data = JSON.parse(body)
-		recent_update = data
-		update(data)
-		res.end('')
-	})
-})
-
-sad = []
-
-function update(json) {
-	io.emit('update', json)
-	//console.log(json);
-
-	/*
-  fss.readFile('results.json', function (err, data) {
-      var jsonn = JSON.parse(data)
-      jsonn.push("sadsad")
-      fss.writeFile("results.json", JSON.stringify(jsonn))
-  })
-  */
-	/*
-  sad.push(json);
-  const data = JSON.stringify(json);
-
-    // write JSON string to a file
-    fs.writeFile('user.json', data, (err) => {
-        if (err) {
-            throw err;
-        }
-        console.log("JSON data is saved.");
-    });
-
-    */
+/*
+if (!config.debug.terminalOnly) {
+	window.gsi = gsi
+	window.http = http
+	window.socket = socket
+	window.build()
+}
+else {
+	console.info("Not opening window, terminal only mode is enabled")
+}
+*/
+function cleanup() {
+	gsi.kill()
+	http.kill()
+	//socket.kill()
+	//window.app.quit()
 }
 
-server.listen(config.GameStateIntegrationPort)
+for (let signal of ["exit", "SIGINT", "SIGUSR1", "SIGUSR2"]) {
+	process.on(signal, cleanup)
+}
