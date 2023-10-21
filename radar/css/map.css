@@ -86,11 +86,11 @@ div.dot::after {
 }
 
 div.dot.CT {
-	background: #2878f0;
+	background: #5ab8f4;
 }
 
 div.dot.T {
-	background: #e50b0b;
+	background: #f0c941;
 }
 
 div.dot.bomb {
@@ -226,13 +226,13 @@ div.label.dead {
 }
 
 #smokes > div.CT {
-	background: #678faa;
-	border: #77c5f6 solid 0.2vmin;
+	background: #678FAA;
+	border-color: #77C5F6;
 }
 
 #smokes > div.T {
-	background: #e50b0b36;
-	border: #e50b0b5e solid 0.2vmin;
+	background: #CCBA7D;
+	border-color: #F1D369;
 }
 
 #smokes > div.hide {
@@ -331,7 +331,7 @@ div.label.dead {
 	height: 4vmin;
 	width: 4vmin;
 }
-/*
+
 #advisory {
 	position: absolute;
 	width: 14%;
@@ -403,7 +403,7 @@ div.label.dead {
 #advisory.planting span, #advisory.defuse span, #advisory.solesurvivor span {
 	color: #fff;
 }
-*/
+
 #unknownMap {
 	position: absolute;
 	bottom: 0;
