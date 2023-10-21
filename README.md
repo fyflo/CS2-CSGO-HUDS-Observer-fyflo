@@ -1,12 +1,14 @@
 # CS2-CSGO-HUDS-Observer-fyflo
 
+## NEW MAP CS2
++ update Boltobserv v. 1.4
+
 ## NEW Create match tab
 Update HUDS
 
 ## NEW Create match tab
 + Map PICK
 + Match info
-+ update Boltobserv v. 1.3
 
 # IMPORTANT
 
