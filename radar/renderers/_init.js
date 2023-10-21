@@ -46,10 +46,11 @@ socket.element.addEventListener("welcome", event => {
 		document.getElementById("dragarea").style.display = "none"
 		// Set cursor to default, as we don't have a drag area
 		document.body.style.cursor = "default"
-
+/*
 		if (!global.config.browser.transparent) {
 			document.body.style.background = "#000"
 		}
+*/
 	}
 
 	// Do the same for the bomb icon
