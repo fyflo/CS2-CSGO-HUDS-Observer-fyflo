@@ -194,8 +194,8 @@ filter: brightness(5%) invert(100%)
 #economy{
 /*opacity: 0;*/
 display: flex;
-//background-color: #212121;
-background-image: url('/storage/HUD/fon_loss_value.png');
+background-color: #212121;
+//background-image: url('/storage/HUD/fon_loss_value.png');
 margin-top: 85px;
 margin-left: 837.5px;
 position: absolute;
