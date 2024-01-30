@@ -22,19 +22,21 @@ Update HUDS
 
 ## How does it work?
 
-Basically, CS:GO is streaming data to local app-server, that transforms data and then load it to local webpage.
+Basically, CS:GO/CS2 is streaming data to local app-server, that transforms data and then load it to local webpage.
 
 ## To-do before running
 
 - Node.js needs to be installed
-- CSGO
+##
+#### CSGO
 - SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS:GO location
 - SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\observer.cfg needs to be placed in cfg folder in CS2 location
-- CS2
+#### CS2
 - SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS2 location
-- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\observer.cfg needs to be placed in cfg folder in CS:GO location
-- CS:GO needs to run on Fullscreen Windowed (I know people may dislike it, but since it's only for observation, soo...)
-- After running CS:GO and connecting to match (or replaying a demo, you can use this in it too), type to console `exec observer.cfg`, it makes everything default disappear besides map and killfeed (can use `exec observer_off.cfg` to turn back to normal)
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\observer.cfg needs to be placed in cfg folder in CS2 location
+##
+- CS:GO/CS2 needs to run on Fullscreen Windowed (I know people may dislike it, but since it's only for observation, soo...)
+- After running CS:GO/CS2 and connecting to match (or replaying a demo, you can use this in it too), type to console `exec observer.cfg`/`observer_on_map_cs2`, it makes everything default disappear besides map and killfeed (can use `exec observer_off.cfg`/`exec observer_on_map_cs2` to turn back to normal)
 - Ensure everything in the `config.json` file is filled out
 
 ## Configuration
@@ -76,7 +78,11 @@ Basically, CS:GO is streaming data to local app-server, that transforms data and
 
 - Install NodeJS (nodejs.org)
 - Download this repo somewhere
-- Start RUN_HUD.bat file and RUN_RADAR.bat
+##
+- Start RUN_HUD.bat file and RUN_RADAR.bat if you want to include a third-party mini card
+##
+- Start RUN_HUD.bat file if you want to keep the mini map from the game.
+##
 - Run Overlay Exe from here: [OVERLAY DOWNLOAD](https://drive.google.com/file/d/1gHMgI85guGmWOkSV4aqhUl0hUOSioxV1/view?usp=sharing) or just go to your browser [http://localhost:2626](http://localhost:2626)
 - Ensure that in the Overlay exe folder, there is a config.json file with the following:
 - Radar will be on :36364 port [http://localhost:36364](http://localhost:36364)
@@ -91,7 +97,7 @@ Basically, CS:GO is streaming data to local app-server, that transforms data and
 ## How to make it work with OBS?
 - In your OBS create a new scene
 - In scene, click on plus button and add window capture and choose csgo.exe
-- Add browser and in url copy and paste your CS-GO link
+- Add browser and in url copy and paste your CS-GO/CS2 link
 - Add second browser and paste url for radar (it should look like this)
 ![Ex5](https://i.imgur.com/TsxNBgP.png)
 ![Ex6](https://i.imgur.com/aqxAHXH.png)
