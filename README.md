@@ -29,13 +29,13 @@ Basically, CS:GO/CS2 is streaming data to local app-server, that transforms data
 - Node.js needs to be installed
 ##
 #### CSGO
-- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS:GO location
-- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\observer.cfg needs to be placed in cfg folder in CS:GO location
-- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\observer_on_map_cs2.cfg needs to be placed in cfg folder in CS:GO location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\ `gamestate_integration_observerspectator.cfg` needs to be placed in cfg folder in CS:GO location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\ `observer.cfg` needs to be placed in cfg folder in CS:GO location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\csgo\cfg\ `observer_on_map_cs2.cfg` needs to be placed in cfg folder in CS:GO location
 #### CS2
-- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\gamestate_integration_observerspectator.cfg needs to be placed in cfg folder in CS2 location
-- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\observer.cfg needs to be placed in cfg folder in CS2 location
-- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\observer_on_map_cs2.cfg needs to be placed in cfg folder in CS2 location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\ `game` \csgo\cfg\ `gamestate_integration_observerspectator.cfg` needs to be placed in cfg folder in CS2 location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\ `game` \csgo\cfg\ `observer.cfg` needs to be placed in cfg folder in CS2 location
+- SteamLibrary\steamapps\common\Counter-Strike Global Offensive\ `game` \csgo\cfg\ `observer_on_map_cs2.cfg` needs to be placed in cfg folder in CS2 location
 ##
 - CS:GO/CS2 needs to run on Fullscreen Windowed (I know people may dislike it, but since it's only for observation, soo...)
 - After running CS:GO/CS2 and connecting to match (or replaying a demo, you can use this in it too), type to console `exec observer.cfg`/`observer_on_map_cs2`, it makes everything default disappear besides map and killfeed (can use `exec observer_off.cfg`/`exec observer_on_map_cs2` to turn back to normal)
