@@ -12,7 +12,7 @@ Update HUDS
 
 # IMPORTANT
 
-## Before starting change config.json
+## Before starting change config.json if necessary
 
 # Examples
 
