@@ -113,8 +113,8 @@ $(document).ready(function () {
         res.push(player);
       }
       res.sort(function (a, b) {
-        //return a.observer_slot - b.observer_slot
-        return a.observer_slot - b.observer_slot + 1;
+        return a.observer_slot - b.observer_slot;
+        //return a.observer_slot - b.observer_slot + 1;
       });
       return res;
     },
