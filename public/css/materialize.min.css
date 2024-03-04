@@ -2555,6 +2555,9 @@ menu {
    */
 summary {
   display: list-item;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 40px;
 }
 
 /* Scripting
@@ -2722,8 +2725,9 @@ nav,
 
 blockquote {
   margin: 20px 0;
-  padding-left: 1.5rem;
-  border-left: 5px solid #ee6e73;
+  padding-left: 1.5rem rem;
+  border-left: 5px solid #ff000a;
+  background-color: moccasin;
 }
 
 i {
@@ -9307,6 +9311,14 @@ input[type="range"]::-ms-thumb {
 .timepicker-clear,
 .timepicker-close {
   padding: 0 20px;
+}
+
+.spoiler-trigger {
+  text-decoration: none;
+}
+
+.spoiler-block {
+  display: none;
 }
 
 /* Media Queries */
