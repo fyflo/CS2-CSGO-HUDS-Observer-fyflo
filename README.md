@@ -389,6 +389,8 @@ function updatePage(data) {
 - [boldgolt](https://github.com/boltgolt) - Radar on hud [link](https://github.com/boltgolt/boltobserv)
 - As I mentioned before, [RedSparr0w](https://github.com/RedSparr0w) is the man I wouldn't make it without.
 - [Bre3n](https://github.com/Bre3n) - No original Overlay CSGO HUD [link](https://github.com/Bre3n/CSGO)
+- [JohnTimmermann](https://github.com/JohnTimmermann) - Fix Couch [link](https://github.com/JohnTimmermann/Custom-CS2-HUD)
+
 
 ## License
 
