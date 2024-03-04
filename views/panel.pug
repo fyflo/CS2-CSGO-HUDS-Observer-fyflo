@@ -65,34 +65,36 @@
 						option(value=null) NONE
 						option(value='auto', selected) Try to match team automatically
 					label Set team 2
-		.col.s12
-			.row
-				h3 LIVE MAP PICK
-				.input-field.col.s12
-					select#online_map
-						option(value='', selected) NONE
-						option(value='Playing DECIDER') DECIDER
-						option(value='Playing ANUBIS | Pick ') ANUBIS
-						option(value='Playing INFERNO | Pick ') INFERNO
-						option(value='Playing MIRAGE | Pick ') MIRAGE
-						option(value='Playing OVERPASS | Pick ') OVERPASS
-						option(value='Playing NUKE | Pick ') NUKE
-						option(value='Playing ANCIENT | Pick ') ANCIENT
-						option(value='Playing VERTIGO | Pick ') VERTIGO
-						option(value='Playing ANUBIS | DECIDER ') ANUBIS | DECIDER 
-						option(value='Playing INFERNO | DECIDER ') INFERNO | DECIDER 
-						option(value='Playing MIRAGE | DECIDER ') MIRAGE | DECIDER 
-						option(value='Playing OVERPASS | DECIDER ') OVERPASS | DECIDER 
-						option(value='Playing NUKE | DECIDER ') NUKE | DECIDER 
-						option(value='Playing ANCIENT | DECIDER ') ANCIENT | DECIDER 
-						option(value='Playing VERTIGO | DECIDER') VERTIGO | DECIDER 
-					label Map pick team
-			.row
-		.col.s12
-			.row
-				.input-field.col.s12
-					input#team_pick_map.validate(placeholder='Team Name', type='text', name="team_pick_map")
-					label(for='team_pick_map') Picked by Team Name
+		details.col.s12 
+			summary LIVE MAP PICK Expand | Развернуть
+			.col.s12
+				.row
+					h3 LIVE MAP PICK
+					.input-field.col.s12
+						select#online_map
+							option(value='', selected) NONE
+							option(value='Playing DECIDER') DECIDER
+							option(value='Playing ANUBIS | Pick ') ANUBIS
+							option(value='Playing INFERNO | Pick ') INFERNO
+							option(value='Playing MIRAGE | Pick ') MIRAGE
+							option(value='Playing OVERPASS | Pick ') OVERPASS
+							option(value='Playing NUKE | Pick ') NUKE
+							option(value='Playing ANCIENT | Pick ') ANCIENT
+							option(value='Playing VERTIGO | Pick ') VERTIGO
+							option(value='Playing ANUBIS | DECIDER ') ANUBIS | DECIDER 
+							option(value='Playing INFERNO | DECIDER ') INFERNO | DECIDER 
+							option(value='Playing MIRAGE | DECIDER ') MIRAGE | DECIDER 
+							option(value='Playing OVERPASS | DECIDER ') OVERPASS | DECIDER 
+							option(value='Playing NUKE | DECIDER ') NUKE | DECIDER 
+							option(value='Playing ANCIENT | DECIDER ') ANCIENT | DECIDER 
+							option(value='Playing VERTIGO | DECIDER') VERTIGO | DECIDER 
+						label Map pick team
+				.row
+			.col.s12
+				.row
+					.input-field.col.s12
+						input#team_pick_map.validate(placeholder='Team Name', type='text', name="team_pick_map")
+						label(for='team_pick_map') Picked by Team Name
 			.row
 		details.col.s12 
 			summary MAP PICK Expand | Развернуть
