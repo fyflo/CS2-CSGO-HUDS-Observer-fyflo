@@ -41,6 +41,10 @@ function loadAvatar(steamid, callback) {
 }
 
 $(document).ready(function () {
+  if (io.connected) {
+    console.log("main.js Connected to io");
+  }
+  let ignoredSteamIDs = []; //Initialize ignoredSteamIDs array to hide players
   var slotted = [];
   var meth = {
     getTeamOne: function () {
@@ -110,6 +114,13 @@ $(document).ready(function () {
         let player = this.info.allplayers[steamid];
         //if (player.observer_slot == 0) player.observer_slot = 10
         player.steamid = steamid;
+        player.steamid = steamid;
+
+        if (ignoredSteamIDs.includes(steamid)) {
+          //If the steamID is in ignoredSteamIDs, we continue to the next player in the loop
+          continue;
+        }
+
         res.push(player);
       }
       res.sort(function (a, b) {
@@ -296,7 +307,86 @@ $(document).ready(function () {
       }
     }
   }
+  /*
+  CSGOGSI.prototype.digestMIRV = function (raw) {
+    if (!this.last) {
+      return null;
+    }
+    var data = raw.keys;
+    var killer = this.last.players.filter(function (player) {
+      return player.steamid === data.attacker.xuid;
+    })[0];
+    var victim = this.last.players.filter(function (player) {
+      return player.steamid === data.userid.xuid;
+    })[0];
+    var assister = this.last.players.filter(function (player) {
+      return (
+        player.steamid === data.assister.xuid && data.assister.xuid !== "0"
+      );
+    })[0];
+    if (!killer || !victim) {
+      return null;
+    }
 
+    var kill = {
+      killer: killer,
+      victim: victim,
+      assister: assister || null,
+      flashed: data.assistedflash,
+      headshot: data.headshot,
+      weapon: data.weapon,
+      wallbang: data.penetrated > 0,
+      attackerblind: data.attackerblind,
+      thrusmoke: data.thrusmoke,
+      noscope: data.noscope,
+    };
+
+    const killIcon = (iconName, show) =>
+      `<div class="kill-icon ${
+        show ? "show" : ""
+      }"><img src="./elements/${iconName}.png" /></div>`;
+
+    const killfeedEntry = (kill) => {
+      const assistHTML = kill.assister
+        ? `
+		  <div class="assist-container">
+			<div class="plus">+</div>
+			${killIcon("flashed", kill.flashed)}
+			<div class="assist-name ${kill.assister.team.side}">${kill.assister.name}</div>
+		  </div>
+		  `
+        : ``;
+      const html = `
+		  <div class="kill-container"><div class="kill">
+			${killIcon("attackerblind", kill.attackerblind)}
+			<div class="killer-name ${kill.killer.team.side}">${kill.killer.name}</div>
+			${assistHTML}
+			<div class="kill-weapon">
+			  <img src="/files/img/weapons/${kill.weapon}.png" />
+			</div>
+			${killIcon("noscope", kill.noscope)}
+			${killIcon("thrusmoke", kill.thrusmoke)}
+			${killIcon("wallbang", kill.wallbang)}
+			${killIcon("headshot", kill.headshot)}
+			<div class="victim-name ${kill.victim.team.side}">${kill.victim.name}</div>
+			</div> </div>
+		`;
+      return html;
+    };
+    const addKill = (kill) => {
+      const killHTML = killfeedEntry(kill);
+      $("#killfeed").append($(killHTML));
+    };
+
+    GSI.on("kill", (kill) => {
+      addKill(kill);
+      http.kill();
+    });
+
+    this.execute("kill", kill);
+    return kill;
+  };
+*/
   function listener(players, teams) {
     io.on("match", function (data) {
       match = data;
@@ -314,6 +404,16 @@ $(document).ready(function () {
       location.reload();
     });
     io.emit("ready", true);
+
+    //Listening for hidPlayers - Also needed in index.js in root folder
+    io.on("hidePlayers", function (data) {
+      const iSID = data.iSID; //Setting iSID to the value of the parameter given data, and accessing iSID with dot operator
+      if (!ignoredSteamIDs.includes(iSID)) {
+        //If iSID is not already in ignoredSteamIDs,
+        ignoredSteamIDs.push(iSID); //push iSID to ignoredSteamIDs
+      }
+    });
+
     io.on("toggleScoreboard", function (data) {
       toggleScoreboard(data);
     });
