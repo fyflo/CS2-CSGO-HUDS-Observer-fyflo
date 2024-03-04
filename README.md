@@ -1,6 +1,7 @@
 # CS2-CSGO-HUDS-Observer-fyflo
 
-## NEW to the page CREATE MATCH
+## FIX COUCH and NEW to the page CREATE MATCH
++ FIX COUCH [JohnTimmermann](https://github.com/JohnTimmermann)
 + Added details so that MAP PICK does not interfere with BO 1 to the page CREATE MATCH
 
 ## RUN_HUD and RUN_RADAR
