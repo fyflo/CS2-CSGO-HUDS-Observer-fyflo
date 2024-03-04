@@ -1,7 +1,11 @@
 # CS2-CSGO-HUDS-Observer-fyflo
 
 ## RUN_HUD and RUN_RADAR
++ Added details so that MAP PICK does not interfere with BO 1 CREATE MATCH
+
+## RUN_HUD and RUN_RADAR
 - [If RUN_HUD and RUN_RADAR do not start, then download the archive and replace the files.](https://drive.google.com/file/d/1yXAhl4kY60Tojo8oaQ7UOjq_LHR7GRVW/view?usp=sharing)
+Before adding a new package you need to delete the node_modules folder
 
 ## NEW MAP CS2
 + update Boltobserv v. 1.4
