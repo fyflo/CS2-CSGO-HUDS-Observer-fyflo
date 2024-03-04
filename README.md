@@ -5,7 +5,7 @@
 + Added details so that MAP PICK does not interfere with BO 1 to the page CREATE MATCH
 <details><summary>Example</summary>
 
-![Ex1](https://i.imgur.com/UlJNoet.png)
+![Ex1](https://i.imgur.com/9c2R9Vh.png)
 
 
 </details>
