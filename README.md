@@ -10,7 +10,9 @@
 
 </details>
 ## RUN_HUD and RUN_RADAR
-- [If RUN_HUD and RUN_RADAR do not start, then download the archive and replace the files.](https://drive.google.com/file/d/1yXAhl4kY60Tojo8oaQ7UOjq_LHR7GRVW/view?usp=sharing)
+- If RUN_HUD and RUN_RADAR do not start, then download the archive and replace the [files.](https://drive.google.com/file/d/1yXAhl4kY60Tojo8oaQ7UOjq_LHR7GRVW/view?usp=sharing)
+
+
 Before adding a new package you need to delete the node_modules folder
 
 ## NEW MAP CS2
