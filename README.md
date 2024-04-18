@@ -31,10 +31,13 @@ Update HUDS
 ## Before starting change config.json if necessary
 
 # Examples
-
+<details><summary>MY HUD</summary>
+	
 ![Ex1](https://i.imgur.com/vazk1hm.jpeg)
 ![Ex2](https://i.imgur.com/f70vHyB.jpeg)
 - An example of how my HUD works [https://www.youtube.com/watch?v=liKSKBNt224](https://www.youtube.com/watch?v=liKSKBNt224)
+
+</details>
 
 <details><summary>HUDs assembled</summary>
 
