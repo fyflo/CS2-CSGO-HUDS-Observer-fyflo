@@ -36,6 +36,12 @@ Update HUDS
 ![Ex2](https://i.imgur.com/f70vHyB.jpeg)
 - An example of how my HUD works [https://www.youtube.com/watch?v=liKSKBNt224](https://www.youtube.com/watch?v=liKSKBNt224)
 
+<details><summary>HUDs assembled</summary>
+
+[https://imgur.com/a/hx55fuz](https://imgur.com/a/hx55fuz)
+
+</details>
+
 ## How does it work?
 
 Basically, CS:GO/CS2 is streaming data to local app-server, that transforms data and then load it to local webpage.
