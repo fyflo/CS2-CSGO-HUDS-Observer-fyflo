@@ -2643,7 +2643,7 @@ a {
 
 /* 2dp elevation modified*/
 .z-depth-1,
-nav,
+.nav,
 .card-panel,
 .card,
 .toast,
@@ -3570,7 +3570,8 @@ table span.badge {
 
 .row .col.s3_2 {
   /* width: 20%;*/
-  width: 150px;
+  width: 16%;
+  /* width: 250px; */
   margin-left: auto;
   left: auto;
   right: auto;
@@ -4633,6 +4634,7 @@ h3 {
   font-size: 2.92rem;
   line-height: 110%;
   margin: 1.9466666667rem 0 1.168rem 0;
+  background-color: #ff19247d;
 }
 
 h4 {
@@ -4645,6 +4647,7 @@ h5 {
   font-size: 1.64rem;
   line-height: 110%;
   margin: 1.0933333333rem 0 0.656rem 0;
+  background-color: #ff19247d;
 }
 
 h6 {
@@ -5144,7 +5147,7 @@ small {
   overflow-x: auto;
   overflow-y: hidden;
   height: 48px;
-  width: 100%;
+  width: 103%;
   background-color: #fff;
   margin: 0 auto;
   white-space: nowrap;
@@ -5194,7 +5197,7 @@ small {
 }
 
 .tabs .tab a {
-  color: rgba(238, 110, 115, 0.7);
+  color: rgba(30, 18, 18, 0.7);
   display: block;
   width: 100%;
   height: 100%;
@@ -5215,7 +5218,7 @@ small {
 .tabs .tab a:hover,
 .tabs .tab a.active {
   background-color: transparent;
-  color: #ee6e73;
+  color: #eee;
 }
 
 .tabs .tab.disabled a,
@@ -5292,6 +5295,18 @@ small {
   border-radius: 2px;
   display: inline-block;
   height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-small {
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 12px;
   line-height: 36px;
   padding: 0 16px;
   text-transform: uppercase;
@@ -5379,7 +5394,7 @@ small {
 .btn-large:focus,
 .btn-small:focus,
 .btn-floating:focus {
-  background-color: #1d7d74;
+  background-color: #ff0000c7;
 }
 
 .btn,
@@ -5387,7 +5402,7 @@ small {
 .btn-small {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #ff0000c7;
   text-align: center;
   letter-spacing: 0.5px;
   -webkit-transition: background-color 0.2s ease-out;
@@ -5398,7 +5413,7 @@ small {
 .btn:hover,
 .btn-large:hover,
 .btn-small:hover {
-  background-color: #2bbbad;
+  background-color: #ff0003c1;
 }
 
 .btn-floating {
@@ -5411,7 +5426,7 @@ small {
   height: 40px;
   line-height: 40px;
   padding: 0;
-  background-color: #26a69a;
+  background-color: #ff0000c7;
   border-radius: 50%;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -5420,7 +5435,7 @@ small {
 }
 
 .btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #ff0000c7;
 }
 
 .btn-floating:before {
@@ -7828,11 +7843,11 @@ input[type="range"]::-ms-thumb {
 .sidenav li > a.btn-large:hover,
 .sidenav li > a.btn-small:hover,
 .sidenav li > a.btn-large:hover {
-  background-color: #2bbbad;
+  background-color: #ff0000c7;
 }
 
 .sidenav li > a.btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #ff0000c7;
 }
 
 .sidenav li > a > i,
