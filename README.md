@@ -1,5 +1,16 @@
 # CS2-CSGO-HUDS-Observer-fyflo
 
+## Application update
++ Now the application has added the ability to manage teams through buttons in the sections: pick cards and winner cards.
+A section has also been added for working with HUD VOTE maps.
+
+<details><summary>Example</summary>
+
+![Ex1](https://i.imgur.com/d5aTrEG.png)
+![Ex2](https://i.imgur.com/eRsTkrZ.png)
+
+</details>
+
 ## FIX COUCH and NEW to the page CREATE MATCH
 + FIX COUCH [JohnTimmermann](https://github.com/JohnTimmermann)
 + Added details so that MAP PICK does not interfere with BO 1 to the page CREATE MATCH
