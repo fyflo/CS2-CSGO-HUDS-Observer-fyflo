@@ -2,18 +2,21 @@ doctype html
 html
 	head
 	script(src="/socket.io/socket.io.js")
-	script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+	script(src="https://code.jquery.com/jquery-3.7.1.min.js")
 	script.
 		var ip = "#{ip}",
 		port = "#{port}";
 	script(src="/js/panel.js")
+	//script(src="/js/veto.js")
 	script(src="/js/functions.js")
 	script(src="/js/teams.js")
 	script(src="/js/players.js")
 	script(src="/js/huds.js")
 	script(src="/js/live.js")
 	script(src="/js/materialize.min.js")
+	link(rel='stylesheet', href='/css/style.css')
 	link(rel='stylesheet', href='/css/materialize.min.css')
+	link(rel='shortcut icon', href='/files/favicon.ico')
 	link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
 	
 	meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -23,16 +26,24 @@ html
 				.row
 					.col.s12
 						ul.tabs
-							li.tab.col.s3_2
+							li.tab.col.s3_2.btn
 								a.active(href='#team_panel') Teams
-							li.tab.col.s3_2
+									i.material-icons group
+							li.tab.col.s3_2.btn
 								a(href='#player_panel') Players
-							li.tab.col.s3_2
+									i.material-icons person
+							li.tab.col.s3_2.btn
 								a(href='#match') Create match
-							li.tab.col.s3_2
+									i.material-icons add
+							li.tab.col.s3_2.btn
 								a(href='#huds') HUDs
-							li.tab.col.s3_2
+									i.material-icons list
+							li.tab.col.s3_2.btn
 								a(href='#live') Live Page
+									i.material-icons live_tv
+							//li.tab.col.s3_2.btn
+								a(href='#veto') Veto
+									i.material-icons where_to_vote
 					#team_panel.col.s12
 						include teams.pug
 					#player_panel.col.s12
@@ -43,6 +54,8 @@ html
 						include huds.pug
 					#live.col.s12
 						include live.pug
+					//#veto.col.s12
+						include veto.pug
 	script.
 		$('select').formSelect();
 		$('.dropdown-button').dropdown({
