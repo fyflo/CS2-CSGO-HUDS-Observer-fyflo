@@ -1,5 +1,8 @@
 # CS2-CSGO-HUDS-Observer-fyflo
 
+## autodirector
+If autodirector does not work, then type in the console `spec_autodirector 1`
+
 ## Application update
 + Now the application has added the ability to manage teams through buttons in the sections: pick cards and winner cards.
 A section has also been added for working with HUD VOTE maps.
