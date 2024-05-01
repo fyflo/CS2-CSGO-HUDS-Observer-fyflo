@@ -434,4 +434,4 @@ The section above is not legal advice and is not legally binding. See the LICENS
 
 ## My HUD
 
-On the issue of purchasing my HUD, you need to write to my mail. fyflostream@gaprt.ru. Only for Russian Federation.
+On the issue of purchasing my HUD, you need to write to my mail. fyflostream@yandex.ru. Only for Russian Federation.
