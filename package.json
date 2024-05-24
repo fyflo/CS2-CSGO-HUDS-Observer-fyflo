@@ -1,6 +1,6 @@
 {
   "name": "CS2-CSGO-fyflo",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "private": true,
   "description": "CS2-CSGO-fyflo",
   "author": "fyflo",
@@ -11,7 +11,7 @@
     "@types/socket.io-client": "^1.4.32",
     "body-parser": "latest",
     "browserify": "^17.0.0",
-    "csgogsi": "^2.5.1",
+    "csgogsi": "^3.0.4",
     "express": "^4.17.2",
     "fs": "latest",
     "http": "latest",
@@ -19,12 +19,15 @@
     "json5": "^2.2.0",
     "multer": "latest",
     "nedb": "latest",
-    "node-csgo-gsi": "0.0.4-alpha.3",
+    "node-csgo-gsi": "0.0.5",
     "path": "^0.12.7",
     "pug": "latest",
     "punycode": "^2.3.0",
     "request": "latest",
     "socket.io": "^4.4.1",
-    "ws": "^7.2.3"
+    "ws": "^7.2.3",
+    "csgogsi-socket": "^2.7.4",
+    "buffer": "^6.0.3",
+    "typescript": "^4.5.4"
   }
 }
