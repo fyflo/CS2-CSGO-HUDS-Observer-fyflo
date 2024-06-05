@@ -2,7 +2,7 @@
 
 ## Setting for monitors with resolutions greater than 1920 x 1080
 1. Go to the address: `CS2-CSGO-HUDS-Observer-fyflo-main\overlay` and adjust the resolution to yours in the `package.json` file ("width": `specify the width`, "height": `specify the height`).
-2. If the HUD is on the wrong monitor, select it in the taskbar, and press Win+Shift+Arrow keys to move it to the correct monitor.
+2. If the HUD is on the wrong monitor, select it in the taskbar, and press `Win+Shift+Arrow keys` to move it to the correct monitor.
 
 ## autodirector
 If autodirector does not work, then type in the console `spec_autodirector 1`
