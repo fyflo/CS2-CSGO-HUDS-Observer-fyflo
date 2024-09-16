@@ -111,8 +111,8 @@ socket.element.addEventListener("explosion", (event) => {
       gapElement.id = "gap" + event.data.id;
 
       // Calculate gap position within smoke
-      gapElement.style.left = ((smokeX - pos.x) / smokeSize) * 100 + "%";
-      gapElement.style.bottom = ((smokeY - pos.y) / smokeSize) * 100 + "%";
+      gapElement.style.left = ((pos.x - smokeX) / smokeSize) * 100 + "%";
+      gapElement.style.bottom = ((pos.y - smokeY) / smokeSize) * 100 + "%";
 
       // Insert gap into smoke
       smokeElement.appendChild(gapElement);
@@ -165,11 +165,13 @@ socket.element.addEventListener("infernos", (event) => {
 
       // Style the flame
       flameElement[i].style.height = flameElement[i].style.width =
-        (100 / global.mapData.resolution / 1024) * 100 + "%";
+        (120 / global.mapData.resolution / 1024) * 100 + "%";
       flameElement[i].style.left =
         global.positionToPerc(inferno.flamesPosition[i], "x") + "%";
       flameElement[i].style.bottom =
         global.positionToPerc(inferno.flamesPosition[i], "y") + "%";
+      /*flameElement[i].style.top =
+        global.positionToPerc(inferno.flamesPosition[i], "z") + "%";*/
 
       // Add it to the parent inferno
       flameElementsStr += flameElement[i].outerHTML;
@@ -210,7 +212,7 @@ socket.element.addEventListener("flashbangs", (event) => {
 
       // Calculate the height and width based on the map resolution
       flashbangElement.style.height = flashbangElement.style.width =
-        (290 / global.mapData.resolution / 1024) * 100 + "%";
+        (300 / global.mapData.resolution / 1024) * 100 + "%";
 
       // Add it to the DOM
       document.getElementById("flashbangs").appendChild(flashbangElement);
